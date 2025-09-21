@@ -12,6 +12,7 @@ public class metodos {
     private  Queue<objArticulo> atendidos = new LinkedList<>();
     private Scanner sc = new Scanner(System.in);
     private  double TotDia=0.0;
+    private int cont=0;
     public void prin(){
         int opt;
         boolean band=true;
@@ -93,6 +94,7 @@ public class metodos {
         o.setNom(sc.next());
         System.out.println("Ingrese la cedula: ");
         o.setId(sc.nextInt());
+        System.out.println("Turno agregado existosamente.");
         return o;
     }
    public void MostrarTurno(Queue<objArticulo> c){
@@ -153,10 +155,11 @@ public class metodos {
         System.out.println("ARTICULOS");
         System.out.println();
         for (objArticulo i : articulos) {
-            System.out.println("Categoria articulo "+i.getId()+": "+i.getCateg());
-            System.out.println("Nombre articulo "+i.getId()+": "+i.getNom());
-            System.out.println("Precio articulo "+i.getId()+": "+i.getPrecioU());
-            System.out.println("Estado articulo "+i.getId()+": "+i.getEstado());
+            System.out.println("|Categoria articulo "+i.getId()+": "+i.getCateg());
+            System.out.println("|Nombre articulo "+i.getId()+": "+i.getNom());
+            System.out.println("|Precio articulo "+i.getId()+": "+i.getPrecioU());
+            System.out.println("|Estado articulo "+i.getId()+": "+i.getEstado()+" (0.activo y 1.inactivo)");
+            System.out.println("----------------------------");
         }
         do {
             System.out.println("Ingrese el id del producto que desea agregar: ");
@@ -178,7 +181,7 @@ public class metodos {
             }
             Total +=cant*PrecioU;
         } while (band);
-
+        System.out.println("Producto agregado existosamente.");
         return Total;
     }
     public void TotalVent(Double m){
@@ -260,7 +263,7 @@ public class metodos {
                     int pto = sc.nextInt();
                     for (objArticulo o : articulos) {
                         if (o.getId()==pto) {
-                            articulos.remove();
+                            articulos.remove(o);
                             System.out.println("Articulo eliminado.");
                         }
                     }
