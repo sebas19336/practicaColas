@@ -42,8 +42,9 @@ public class metodos {
             case 4:
                 HU00004();
                 break;
-            default:
-                System.out.println("No hace nada -Porque? - no se");
+            case 5:
+                band=false;
+                System.out.println("Hasta luego.");
                 break;
         }
         }
@@ -122,7 +123,7 @@ public class metodos {
             System.out.println("Menu\nAtencion al Cliente");
             System.out.println("1.Ingresar Compra");
             System.out.println("2.Total Venta");
-            System.out.println("3.Salir");
+            System.out.println("3.Volver");
             opt = ValidarEntero(sc);
             sc.nextLine();
             if (opt<1 || opt>3) {
@@ -197,7 +198,7 @@ public class metodos {
             System.out.println("1.Pendientes");
             System.out.println("2.Atendidos");
             System.out.println("3.Venta total del dia");
-            System.out.println("4.Salir");
+            System.out.println("4.Volver");
             opt = ValidarEntero(sc);
             sc.nextLine();
             if (opt < 1 || opt > 4) {
@@ -248,7 +249,7 @@ public class metodos {
             System.out.println("Inventario");
             System.out.println("1.Ingresar articulo");
             System.out.println("2.Eliminar articulo");
-            System.out.println("3.Salir");
+            System.out.println("3.Volver");
             opt = ValidarEntero(sc);
             sc.nextLine();
             if (opt<1 || opt>3) {
