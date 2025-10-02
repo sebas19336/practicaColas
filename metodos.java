@@ -152,6 +152,11 @@ public class metodos {
         int cant;
         int id;
         boolean band= true;
+        if (articulos.isEmpty()) {
+            System.out.println("No hay ningun articulo");
+            System.out.println("Llene el inventario.");
+            HU00004();
+        }
         System.out.println();
         System.out.println("ARTICULOS");
         System.out.println();
